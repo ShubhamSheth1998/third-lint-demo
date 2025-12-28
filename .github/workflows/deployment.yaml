@@ -1,7 +1,7 @@
 name: React Deployment Yaml
 on: push
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -12,12 +12,12 @@ jobs:
           node-version: 18 
       - name: Install Dependencies
         run: npm install eslint eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y --save-dev
-      - name: Test the code
-        run: npm test
       - name: linting the project
         run: npm run lint
-  deploy:
-    needs: test
+      - name: Test the code
+        run: npm test
+  build:
+    needs: deploy
     runs-on: ubuntu-latest  
     steps:
       - name: Get Code
