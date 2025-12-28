@@ -11,7 +11,7 @@ jobs:
         with: 
           node-version: 18 
       - name: Install Dependencies
-        run: npm ci
+        run: npm install eslint eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-jsx-a11y --save-dev
       - name: Test the code
         run: npm test
       - name: linting the project
