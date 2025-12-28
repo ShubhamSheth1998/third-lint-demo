@@ -16,8 +16,6 @@ jobs:
         run: npm test
       - name: linting the project
         run: npm run lint
-      - name: Fix issue if found in lint
-        run: npm run lint:fix
   deploy:
     needs: test
     runs-on: ubuntu-latest  
